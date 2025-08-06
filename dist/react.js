@@ -1,4 +1,4 @@
-(function(qu,vu){typeof exports=="object"&&typeof module<"u"?vu(exports):typeof define=="function"&&define.amd?define(["exports"],vu):(qu=typeof globalThis<"u"?globalThis:qu||self,vu(qu.ReactBlocks={}))})(this,function(qu){"use strict";var vu={exports:{}},ba={};/**
+(function(qu,vu){typeof exports=="object"&&typeof module<"u"?vu(exports):typeof define=="function"&&define.amd?define(["exports"],vu):(qu=typeof globalThis<"u"?globalThis:qu||self,vu(qu.React={}))})(this,function(qu){"use strict";var vu={exports:{}},ba={};/**
  * @license React
  * react-jsx-runtime.production.js
  *
