@@ -13,11 +13,11 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: false,
     lib: {
       formats: ['es'],
+      fileName: (format, name) => `${name}.js`,
       entry: {
-        main: path.resolve(__dirname, 'src/app/main.jsx'),
+        main: path.resolve(__dirname, 'src/app/main.tsx'),
         ...Object.fromEntries(sync('src/scripts/*.js').map(file => [path.basename(file, path.extname(file)), file])),
       },
-      fileName: (format, name) => `${name}.js`,
     },
     rollupOptions: {
       output: {
