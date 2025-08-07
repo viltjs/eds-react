@@ -17,7 +17,7 @@ function sampleRUM(checkpoint, data) {
   try {
     window.hlx = window.hlx || {};
     if (!window.hlx.rum) {
-      sampleRUM.enhance = () => {};
+      sampleRUM.enhance = () => { };
       const param = new URLSearchParams(window.location.search).get('rum');
       const weight = (param === 'on' && 1)
         || (window.SAMPLE_PAGEVIEWS_AT_RATE === 'high' && 10)
@@ -136,14 +136,14 @@ function setup() {
   window.hlx.codeBasePath = '';
   window.hlx.lighthouse = new URLSearchParams(window.location.search).get('lighthouse') === 'on';
 
-  const scriptEl = document.querySelector('script[src$="/scripts/scripts.js"]');
+  const scriptEl = document.querySelector('script[src$="/dist/scripts.js"]');
   if (scriptEl) {
     try {
       const scriptURL = new URL(scriptEl.src, window.location);
       if (scriptURL.host === window.location.host) {
-        [window.hlx.codeBasePath] = scriptURL.pathname.split('/scripts/scripts.js');
+        [window.hlx.codeBasePath] = scriptURL.pathname.split('/dist/scripts.js');
       } else {
-        [window.hlx.codeBasePath] = scriptURL.href.split('/scripts/scripts.js');
+        [window.hlx.codeBasePath] = scriptURL.href.split('/dist/scripts.js');
       }
     } catch (error) {
       // eslint-disable-next-line no-console

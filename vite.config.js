@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { sync } from 'glob';
 
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
@@ -10,10 +11,9 @@ export default defineConfig(({ mode }) => ({
   build: {
     emptyOutDir: false,
     lib: {
-      entry: path.resolve(__dirname, 'src/main.jsx'),
-      name: 'React',
-      formats: ['umd'],
-      fileName: () => 'react.js',
+      formats: ['es'],
+      entry: [path.resolve(__dirname, 'src/app/main.jsx'), ...sync('src/scripts/*.js')],
+      fileName: (format, name) => `${name}.js`,
     },
   },
 }));

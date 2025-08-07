@@ -1,6 +1,6 @@
 # Beyond the Edge: EDS React Boilerplate
 
-This is a boilerplate for integrating ReactJS with Adobe Edge Delivery Services (EDS). This setup provides a robust development experience, combining the power of a modern JavaScript framework with the simplicity and performance of EDS. This guide will help you get started with the development environment, build your components, and deploy them.
+This is a boilerplate for integrating ReactJS with Adobe Edge Delivery Services (EDS). This setup provides a robust development experience, combining the power of a modern JavaScript framework with the simplicity and performance of EDS.
 
 ## Key Features
 - Seamless EDS Integration: Our React components are built as Universal Module Definition (UMD) bundles, making them easy to consume within the EDS block-based architecture.
@@ -46,7 +46,7 @@ npm start
 
 1. Create a new repository based on this boilerplate and set mountpoint in `fstab.yaml`
 2. Add the [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync) to the repository
-3. Open it in your favorite IDE and be happy coding :)
+3. Open it in your favorite IDE and be happy coding &#128522;
 
 ## Documentation
 
