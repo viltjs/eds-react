@@ -3,13 +3,12 @@
 This is a boilerplate for integrating ReactJS with Adobe Edge Delivery Services (EDS). This setup provides a robust development experience, combining the power of a modern JavaScript framework with the simplicity and performance of EDS.
 
 ## Key Features
-- Seamless EDS Integration: Our React components are built as Universal Module Definition (UMD) bundles, making them easy to consume within the EDS block-based architecture.
 
-- Optimized Development Workflow: We use a single command to run both the AEM dev server and the Vite build process. This ensures that your local environment is always in sync, offering a fast and efficient workflow.
-
-- Production-Ready Builds: Vite is configured to produce highly optimized, production-ready bundles, ensuring your React components are performant and lightweight in the live environment.
-
-- No Proxy Configuration Headaches: We've eliminated the need for complex proxy configurations by using Vite's watch mode, allowing the AEM dev server to directly serve the built files.
+- **Seamless EDS Integration**: Easly consume React components within the EDS block-based architecture.
+- **Modern ES Module Bundling:** React components are built as optimized ES modules, enabling advanced features like code-splitting and lazy loading for faster page loads.
+- **Optimized Development Workflow:** Uses a single command to run both the AEM dev server and the Vite build process. This ensures your local environment is always in sync, offering a fast and efficient workflow.
+- **Production-Ready Builds:** Vite is configured to produce highly optimized, production-ready bundles, ensuring your React components are performant and lightweight in the live environment.
+- **No Proxy Configuration Headaches:** Eliminated the need for complex proxy configurations by using Vite's watch mode, allowing the AEM dev server to directly serve the built files.
 
 ## Environments
 - [Preview](https://main--eds-react--viltjs.aem.page/)
@@ -17,7 +16,7 @@ This is a boilerplate for integrating ReactJS with Adobe Edge Delivery Services 
 
 ## Prerequisites
 
-- [NodeJS](https://nodejs.or)
+- [NodeJS](https://nodejs.org)
 - [AEM CLI](https://www.npmjs.com/package/@adobe/aem-cli)
 
 ```sh
@@ -41,6 +40,14 @@ npm run lint
 ```sh
 npm start
 ```
+
+## Structure
+
+- `src/`: Source directory which will be bundled into distribution
+- `src/app/`: React application with entry point file
+- `src/scripts/`: These are automatically detected and processed by Vite during the build
+- `public/`: Static assets that should be copied directly to the dist folder without any processing
+- `dist/`: Output directory for the build process
 
 ## Create Your Own
 
