@@ -1,9 +1,10 @@
 .*
+_*
 *.md
-karma.config.js
+*.config.js
 LICENSE
 package.json
 package-lock.json
 test/*
 src/*
-_*
+public/*
