@@ -1,6 +1,9 @@
 import * as ReactDOM from 'react-dom/client';
-import App from './App';
+import * as components from './components';
 
-export function render(element: HTMLElement, props) {
-    ReactDOM.createRoot(element).render(<App {...props} />)
+export function render(name: string, block: HTMLElement) {
+    const Component = (components as unknown as Record<string, (props: { block: Node; }) => React.JSX.Element>)[name]
+    const children = <Component block={block.cloneNode(true)} />
+    block.innerHTML = ''
+    ReactDOM.createRoot(block).render(children)
 }
