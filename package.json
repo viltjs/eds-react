@@ -14,9 +14,10 @@
     "build:json:definitions": "merge-json-cli -i \"models/_component-definition.json\" -o \"component-definition.json\"",
     "build:json:filters": "merge-json-cli -i \"models/_component-filters.json\" -o \"component-filters.json\"",
     "prepare": "husky",
+    "aemup": "aem up",
     "build": "vite build",
     "watch": "vite build --watch",
-    "start": "concurrently \"vite build --watch\" \"aem up\"",
+    "start": "npm-run-all -p watch aemup",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -26,7 +27,6 @@
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^4.7.0",
-    "concurrently": "^9.2.0",
     "eslint": "^9.32.0",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-json": "3.1.0",

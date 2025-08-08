@@ -58,10 +58,10 @@ npm start
 ## Documentation
 
 - [www.aem.live](https://www.aem.live/docs/)
-- [experienceleague.adobe.com](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/wysiwyg-authoring/authoring)
-- [Getting Started](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/wysiwyg-authoring/edge-dev-getting-started)
-- [Creating Blocks](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/wysiwyg-authoring/create-block)
-- [Content Modelling](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/wysiwyg-authoring/content-modeling)
+- [experienceleague.adobe.com](https://www.aem.live/docs/aem-authoring)
+- [Getting Started](https://www.aem.live/developer/ue-tutorial)
+- [Creating Blocks](https://www.aem.live/developer/universal-editor-blocks)
+- [Content Modelling](https://www.aem.live/developer/component-model-definitions)
 - [The Anatomy of a Project](https://www.aem.live/developer/anatomy-of-a-project)
 - [Web Performance](https://www.aem.live/developer/keeping-it-100)
 - [Markup, Sections, Blocks, and Auto Blocking](https://www.aem.live/developer/markup-sections-blocks)
