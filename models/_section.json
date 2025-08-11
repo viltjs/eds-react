@@ -49,6 +49,7 @@
         "title",
         "hero",
         "hero-react",
+        "lazy-component",
         "cards",
         "columns",
         "fragment",

@@ -1,4 +1,3 @@
-
 export function getBlockElement(block: Element) {
     return block.children[0].children[0]
 }
