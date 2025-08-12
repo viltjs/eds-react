@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite'
 import path from 'path';
 import { sync } from 'glob';
 
 export default defineConfig(({ mode }) => ({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   define: {
     'process.env.NODE_ENV': JSON.stringify(mode),
   },
@@ -24,6 +25,7 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',
         assetFileNames: (assetInfo) => {
+          console.log("🚀 ~ assetInfo:", assetInfo)
           if (assetInfo.originalFileNames.includes('style.css')) return 'assets/style.css'
           return 'assets/[name].[ext]'
         },
@@ -32,5 +34,6 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
+    watch: { include: ['src/**'] },
   },
 }));
