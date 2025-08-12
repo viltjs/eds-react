@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
+
 import globals from 'globals'
 import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
@@ -5,12 +8,9 @@ import jsonPlugin from 'eslint-plugin-json'
 import xwalkPlugin from 'eslint-plugin-xwalk'
 import reactHooks from 'eslint-plugin-react-hooks'
 
-export default [
-  {
-    ignores: ['dist', 'public'],
-  },
-  js.configs.recommended,
-  ...tseslint.configs.recommended, {
+export default [{
+  ignores: ['dist', 'public'],
+}, js.configs.recommended, ...tseslint.configs.recommended, {
     files: ['**/*.{js,jsx,ts,tsx,mjs}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -34,4 +34,4 @@ export default [
       'linebreak-style': 'off',
       semi: 'off',
     },
-  }]
+  }, ...storybook.configs["flat/recommended"]];
