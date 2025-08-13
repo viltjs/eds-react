@@ -1,12 +1,12 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import path from 'path'
+import { sync } from 'glob'
+import { defineConfig } from 'vite'
+import preact from '@preact/preset-vite'
 import tailwindcss from '@tailwindcss/vite'
-import path from 'path';
-import { sync } from 'glob';
-import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
+import { storybookTest } from '@storybook/addon-vitest/vitest-plugin'
 
 export default defineConfig(({ mode }) => ({
-  plugins: [react(), tailwindcss()],
+  plugins: [preact(), tailwindcss()],
   define: {
     'process.env.NODE_ENV': JSON.stringify(mode),
   },
@@ -60,4 +60,4 @@ export default defineConfig(({ mode }) => ({
       },
     }]
   },
-}));
+}))
