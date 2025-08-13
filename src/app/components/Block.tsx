@@ -7,5 +7,5 @@ export function mapBlockElements(block: Element) {
 }
 
 export function Block({ children }: { children: Element }) {
-    return <div ref={ref => { ref?.appendChild(getBlockElement(children)) }} />
+    return <div ref={ref => { ref?.appendChild<Element>(getBlockElement(children)) }} />
 }

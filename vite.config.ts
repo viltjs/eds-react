@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path';
 import { sync } from 'glob';
+import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 
 export default defineConfig(({ mode }) => ({
   plugins: [react(), tailwindcss()],
@@ -25,7 +26,6 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',
         assetFileNames: (assetInfo) => {
-          console.log("🚀 ~ assetInfo:", assetInfo)
           if (assetInfo.originalFileNames.includes('style.css')) return 'assets/style.css'
           return 'assets/[name].[ext]'
         },
@@ -35,5 +35,29 @@ export default defineConfig(({ mode }) => ({
       },
     },
     watch: { include: ['src/**'] },
+  },
+  test: {
+    projects: [{
+      test: {
+        name: 'default',
+        environment: 'jsdom',
+        globals: true,
+        setupFiles: 'vitest.setup.ts',
+      }
+    }, {
+      plugins: [
+        storybookTest({ configDir: path.join(__dirname, '.storybook') }),
+      ],
+      test: {
+        name: 'storybook',
+        browser: {
+          enabled: true,
+          headless: true,
+          provider: 'playwright',
+          instances: [{ browser: 'chromium' }]
+        },
+        setupFiles: ['.storybook/vitest.setup.ts'],
+      },
+    }]
   },
 }));
