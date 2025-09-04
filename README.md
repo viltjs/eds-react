@@ -9,6 +9,7 @@ This is a boilerplate for integrating ReactJS with Adobe Edge Delivery Services 
 - **Optimized Development Workflow:** Uses a single command to run both the AEM dev server and the Vite build process. This ensures your local environment is always in sync, offering a fast and efficient workflow.
 - **Production-Ready Builds:** Vite is configured to produce highly optimized, production-ready bundles, ensuring your React components are performant and lightweight in the live environment.
 - **No Proxy Configuration Headaches:** Eliminated the need for complex proxy configurations by using Vite's watch mode, allowing the AEM dev server to directly serve the built files.
+- **Comprehensive Tooling:** This boilerplate is pre-configured with essential developer tools.
 
 ## Environments
 - [Preview](https://main--eds-react--viltjs.aem.page/)
@@ -29,16 +30,30 @@ npm install -g @adobe/aem-cli
 npm i
 ```
 
+## Dev
+
+Run this single command to start both the AEM dev server and the Vite build process in watch mode:
+```sh
+npm start
+```
+This will open your local development environment at [localhost:3000](http://localhost:3000/). Any changes you make to your code will be automatically rebuilt by Vite and hot-reloaded by the AEM dev server.
+
 ## Linting
 
 ```sh
 npm run lint
 ```
 
-## Local development
+## Testing
 
 ```sh
-npm start
+npm run test
+```
+
+## Storebooking
+
+```sh
+npm run storybook
 ```
 
 ## Structure
@@ -51,9 +66,10 @@ npm start
 
 ## Create Your Own
 
-1. Create a new repository based on this boilerplate and set mountpoint in `fstab.yaml`
-2. Add the [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync) to the repository
-3. Open it in your favorite IDE and be happy coding &#128522;
+1. Create a new repository based on this boilerplate
+2. Adjust `paths.json` and set mountpoint in `fstab.yaml`
+3. Add the [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync) to the repository
+4. Open it in your favorite IDE and be happy coding &#128522;
 
 ## Documentation
 
