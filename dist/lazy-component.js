@@ -409,7 +409,7 @@ function at({ block: p }) {
 }
 function ct({ block: p }) {
   const [a] = p.children;
-  return a.classList.add("bg-green-500", "p-2"), a.replaceChildren("background color is processed from tailwind"), /* @__PURE__ */ T.jsx(st, { children: a });
+  return a.classList.add("bg-green-500", "p-2"), a.append("background color is processed from tailwind"), /* @__PURE__ */ T.jsx(st, { children: a });
 }
 const pt = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
