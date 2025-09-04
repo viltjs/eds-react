@@ -1,12 +1,12 @@
-var g = { exports: {} }, T = {};
+var O = { exports: {} }, T = {};
 var z;
 function rt() {
   if (z) return T;
   z = 1;
   var p = Symbol.for("react.transitional.element"), E = Symbol.for("react.fragment");
   function C(j, a, l) {
-    var R = null;
-    if (l !== void 0 && (R = "" + l), a.key !== void 0 && (R = "" + a.key), "key" in a) {
+    var d = null;
+    if (l !== void 0 && (d = "" + l), a.key !== void 0 && (d = "" + a.key), "key" in a) {
       l = {};
       for (var m in a)
         m !== "key" && (l[m] = a[m]);
@@ -14,7 +14,7 @@ function rt() {
     return a = l.ref, {
       $$typeof: p,
       type: j,
-      key: R,
+      key: d,
       ref: a !== void 0 ? a : null,
       props: l
     };
@@ -23,14 +23,14 @@ function rt() {
 }
 var D;
 function nt() {
-  return D || (D = 1, g.exports = rt()), g.exports;
+  return D || (D = 1, O.exports = rt()), O.exports;
 }
-var v = nt(), O = { exports: {} }, o = {};
-var B;
+var v = nt(), g = { exports: {} }, o = {};
+var J;
 function ot() {
-  if (B) return o;
-  B = 1;
-  var p = Symbol.for("react.transitional.element"), E = Symbol.for("react.portal"), C = Symbol.for("react.fragment"), j = Symbol.for("react.strict_mode"), a = Symbol.for("react.profiler"), l = Symbol.for("react.consumer"), R = Symbol.for("react.context"), m = Symbol.for("react.forward_ref"), W = Symbol.for("react.suspense"), Q = Symbol.for("react.memo"), $ = Symbol.for("react.lazy"), H = Symbol.iterator;
+  if (J) return o;
+  J = 1;
+  var p = Symbol.for("react.transitional.element"), E = Symbol.for("react.portal"), C = Symbol.for("react.fragment"), j = Symbol.for("react.strict_mode"), a = Symbol.for("react.profiler"), l = Symbol.for("react.consumer"), d = Symbol.for("react.context"), m = Symbol.for("react.forward_ref"), W = Symbol.for("react.suspense"), Q = Symbol.for("react.memo"), $ = Symbol.for("react.lazy"), H = Symbol.iterator;
   function X(t) {
     return t === null || typeof t != "object" ? null : (t = H && t[H] || t["@@iterator"], typeof t == "function" ? t : null);
   }
@@ -123,7 +123,7 @@ function ot() {
     }
     throw t;
   }
-  function d(t, e, r, n, s) {
+  function R(t, e, r, n, s) {
     var f = typeof t;
     (f === "undefined" || f === "boolean") && (t = null);
     var u = !1;
@@ -142,7 +142,7 @@ function ot() {
               u = !0;
               break;
             case $:
-              return u = t._init, d(
+              return u = t._init, R(
                 u(t._payload),
                 e,
                 r,
@@ -152,7 +152,7 @@ function ot() {
           }
       }
     if (u)
-      return s = s(t), u = n === "" ? "." + P(t, 0) : n, Y(s) ? (r = "", u != null && (r = u.replace(I, "$&/") + "/"), d(s, e, r, "", function(et) {
+      return s = s(t), u = n === "" ? "." + P(t, 0) : n, Y(s) ? (r = "", u != null && (r = u.replace(I, "$&/") + "/"), R(s, e, r, "", function(et) {
         return et;
       })) : s != null && (A(s) && (s = Z(
         s,
@@ -165,7 +165,7 @@ function ot() {
     var _ = n === "" ? "." : n + ":";
     if (Y(t))
       for (var c = 0; c < t.length; c++)
-        n = t[c], f = _ + P(n, c), u += d(
+        n = t[c], f = _ + P(n, c), u += R(
           n,
           e,
           r,
@@ -174,7 +174,7 @@ function ot() {
         );
     else if (c = X(t), typeof c == "function")
       for (t = c.call(t), c = 0; !(n = t.next()).done; )
-        n = n.value, f = _ + P(n, c++), u += d(
+        n = n.value, f = _ + P(n, c++), u += R(
           n,
           e,
           r,
@@ -183,7 +183,7 @@ function ot() {
         );
     else if (f === "object") {
       if (typeof t.then == "function")
-        return d(
+        return R(
           V(t),
           e,
           r,
@@ -199,7 +199,7 @@ function ot() {
   function h(t, e, r) {
     if (t == null) return t;
     var n = [], s = 0;
-    return d(t, n, "", "", function(f) {
+    return R(t, n, "", "", function(f) {
       return e.call(r, f, s++);
     }), n;
   }
@@ -292,7 +292,7 @@ function ot() {
     return w(t.type, s, void 0, void 0, f, n);
   }, o.createContext = function(t) {
     return t = {
-      $$typeof: R,
+      $$typeof: d,
       _currentValue: t,
       _currentValue2: t,
       _threadCount: 0,
@@ -393,41 +393,34 @@ function ot() {
     return i.H.useTransition();
   }, o.version = "19.1.1", o;
 }
-var J;
+var B;
 function ut() {
-  return J || (J = 1, O.exports = ot()), O.exports;
+  return B || (B = 1, g.exports = ot()), g.exports;
 }
-function st(p) {
-  return p.children[0].children[0];
-}
-function lt(p) {
-  return [...p.children[0].children];
-}
-function it({ children: p }) {
-  return /* @__PURE__ */ v.jsx("div", { ref: (E) => {
-    E?.appendChild(st(p));
-  } });
+function st({ children: p }) {
+  return p ? /* @__PURE__ */ v.jsx("div", { ref: (E) => {
+    E?.appendChild(p);
+  } }) : null;
 }
 var G = ut();
-const ft = (p) => new Promise((E) => setTimeout(E, p)), ct = G.lazy(() => ft(3e3).then(() => Promise.resolve().then(() => at)));
-function _t({ block: p }) {
-  return /* @__PURE__ */ v.jsx(G.Suspense, { fallback: /* @__PURE__ */ v.jsx("p", { children: "Loading Lazy Component..." }), children: /* @__PURE__ */ v.jsx(ct, { block: p }) });
+const it = (p) => new Promise((E) => setTimeout(E, p)), ft = G.lazy(() => it(3e3).then(() => Promise.resolve().then(() => pt)));
+function at({ block: p }) {
+  return /* @__PURE__ */ v.jsx(G.Suspense, { fallback: /* @__PURE__ */ v.jsx("p", { children: "Loading Lazy Component..." }), children: /* @__PURE__ */ v.jsx(ft, { block: p }) });
 }
-function pt({ block: p }) {
+function ct({ block: p }) {
   return /* @__PURE__ */ v.jsxs("div", { className: "bg-green-500 p-2", children: [
-    /* @__PURE__ */ v.jsx(it, { children: p }),
+    /* @__PURE__ */ v.jsx(st, { children: p }),
     /* @__PURE__ */ v.jsx("p", { children: "background color is processed from tailwind" })
   ] });
 }
-const at = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const pt = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: pt
+  default: ct
 }, Symbol.toStringTag, { value: "Module" }));
 export {
-  it as B,
-  ct as L,
-  _t as a,
+  st as B,
+  ft as L,
+  at as a,
   v as j,
-  lt as m,
   ut as r
 };

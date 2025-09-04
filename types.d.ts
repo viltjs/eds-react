@@ -6,3 +6,9 @@ declare namespace EDS {
         block: HTMLElement;
     }
 }
+
+interface Window {
+    hlx: {
+        codeBasePath: string
+    }
+}

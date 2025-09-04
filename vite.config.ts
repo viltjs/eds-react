@@ -1,12 +1,17 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite'
+import dts from 'vite-plugin-dts';
 import path from 'path';
 import { sync } from 'glob';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 
 export default defineConfig(({ mode }) => ({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), dts({
+    tsconfigPath: './tsconfig.app.json',
+    insertTypesEntry: true,
+    exclude: ["src/stories/*"]
+  })],
   define: {
     'process.env.NODE_ENV': JSON.stringify(mode),
   },
@@ -18,7 +23,7 @@ export default defineConfig(({ mode }) => ({
       fileName: (format, name) => `${name}.js`,
       entry: {
         main: path.resolve(__dirname, 'src/app/main.tsx'),
-        ...Object.fromEntries(sync('src/scripts/*.js').map(file => [path.basename(file, path.extname(file)), file])),
+        ...Object.fromEntries(sync('src/scripts/**/*.{js,jsx,ts,tsx}').map(file => [path.basename(file, path.extname(file)), file])),
       },
     },
     rollupOptions: {
@@ -30,6 +35,7 @@ export default defineConfig(({ mode }) => ({
           return 'assets/[name].[ext]'
         },
         manualChunks: (id) => {
+          if (id.includes('components/Block/utils')) return 'block-utils'
           if (id.includes('LazyComponent')) return 'lazy-component'
         },
       },
