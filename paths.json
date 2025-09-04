@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/tryeds/:/",
-    "/content/tryeds/configuration:/.helix/config.json",
-    "/content/tryeds/metadata:/metadata.json"
+    "/content/eds-reactjs/:/",
+    "/content/eds-reactjs/configuration:/.helix/config.json",
+    "/content/eds-reactjs/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/tryeds/"
+    "/content/eds-reactjs/"
   ]
 }
