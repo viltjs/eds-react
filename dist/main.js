@@ -9781,7 +9781,7 @@ function _h() {
 }
 var Hh = _h();
 function Nh({ block: M }) {
-  const { imgs: [{ picture: fl } = {}], txts: [J = []] } = Ah(M), S = J.map((Ql, Fl) => /* @__PURE__ */ ve.jsx(
+  const { imgs: [{ picture: fl } = {}], txts: [, J = []] } = Ah(M), S = J.map((Ql, Fl) => /* @__PURE__ */ ve.jsx(
     "h1",
     {
       className: "hero-react__title",

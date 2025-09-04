@@ -1,5 +1,5 @@
 h1.hero-react__title {
-    border: 2px solid red;
+    color: red;
 }
 
 .hero-react-container .hero-react-wrapper {
@@ -21,20 +21,14 @@ h1.hero-react__title {
 
 .hero-react picture {
     position: absolute;
+    box-sizing: border-box;
+    object-fit: cover;
     z-index: -1;
     inset: 0;
-    object-fit: cover;
-    box-sizing: border-box;
 }
 
 .hero-react img {
     object-fit: cover;
     width: 100%;
     height: 100%;
-}
-
-@media (width >=900px) {
-    .hero-react {
-        padding: 40px 32px;
-    }
 }

@@ -21,11 +21,9 @@
       "id": "lazy-component",
       "fields": [
         {
-          "component": "richtext",
           "name": "text",
-          "value": "",
           "label": "Text",
-          "valueType": "string"
+          "component": "richtext"
         }
       ]
     }

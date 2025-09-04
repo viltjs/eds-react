@@ -1,40 +1,40 @@
-var O = { exports: {} }, T = {};
-var z;
+var O = { exports: {} }, m = {};
+var b;
 function rt() {
-  if (z) return T;
-  z = 1;
+  if (b) return m;
+  b = 1;
   var p = Symbol.for("react.transitional.element"), E = Symbol.for("react.fragment");
   function C(j, a, l) {
-    var d = null;
-    if (l !== void 0 && (d = "" + l), a.key !== void 0 && (d = "" + a.key), "key" in a) {
+    var R = null;
+    if (l !== void 0 && (R = "" + l), a.key !== void 0 && (R = "" + a.key), "key" in a) {
       l = {};
-      for (var m in a)
-        m !== "key" && (l[m] = a[m]);
+      for (var d in a)
+        d !== "key" && (l[d] = a[d]);
     } else l = a;
     return a = l.ref, {
       $$typeof: p,
       type: j,
-      key: d,
+      key: R,
       ref: a !== void 0 ? a : null,
       props: l
     };
   }
-  return T.Fragment = E, T.jsx = C, T.jsxs = C, T;
+  return m.Fragment = E, m.jsx = C, m.jsxs = C, m;
 }
 var D;
 function nt() {
   return D || (D = 1, O.exports = rt()), O.exports;
 }
-var v = nt(), g = { exports: {} }, o = {};
+var T = nt(), g = { exports: {} }, o = {};
 var J;
 function ot() {
   if (J) return o;
   J = 1;
-  var p = Symbol.for("react.transitional.element"), E = Symbol.for("react.portal"), C = Symbol.for("react.fragment"), j = Symbol.for("react.strict_mode"), a = Symbol.for("react.profiler"), l = Symbol.for("react.consumer"), d = Symbol.for("react.context"), m = Symbol.for("react.forward_ref"), W = Symbol.for("react.suspense"), Q = Symbol.for("react.memo"), $ = Symbol.for("react.lazy"), H = Symbol.iterator;
+  var p = Symbol.for("react.transitional.element"), E = Symbol.for("react.portal"), C = Symbol.for("react.fragment"), j = Symbol.for("react.strict_mode"), a = Symbol.for("react.profiler"), l = Symbol.for("react.consumer"), R = Symbol.for("react.context"), d = Symbol.for("react.forward_ref"), W = Symbol.for("react.suspense"), Q = Symbol.for("react.memo"), $ = Symbol.for("react.lazy"), H = Symbol.iterator;
   function X(t) {
     return t === null || typeof t != "object" ? null : (t = H && t[H] || t["@@iterator"], typeof t == "function" ? t : null);
   }
-  var k = {
+  var L = {
     isMounted: function() {
       return !1;
     },
@@ -44,27 +44,27 @@ function ot() {
     },
     enqueueSetState: function() {
     }
-  }, L = Object.assign, M = {};
-  function y(t, e, r) {
-    this.props = t, this.context = e, this.refs = M, this.updater = r || k;
+  }, k = Object.assign, M = {};
+  function v(t, e, r) {
+    this.props = t, this.context = e, this.refs = M, this.updater = r || L;
   }
-  y.prototype.isReactComponent = {}, y.prototype.setState = function(t, e) {
+  v.prototype.isReactComponent = {}, v.prototype.setState = function(t, e) {
     if (typeof t != "object" && typeof t != "function" && t != null)
       throw Error(
         "takes an object of state variables to update or a function which returns an object of state variables."
       );
     this.updater.enqueueSetState(this, t, e, "setState");
-  }, y.prototype.forceUpdate = function(t) {
+  }, v.prototype.forceUpdate = function(t) {
     this.updater.enqueueForceUpdate(this, t, "forceUpdate");
   };
   function N() {
   }
-  N.prototype = y.prototype;
+  N.prototype = v.prototype;
   function x(t, e, r) {
-    this.props = t, this.context = e, this.refs = M, this.updater = r || k;
+    this.props = t, this.context = e, this.refs = M, this.updater = r || L;
   }
   var S = x.prototype = new N();
-  S.constructor = x, L(S, y.prototype), S.isPureReactComponent = !0;
+  S.constructor = x, k(S, v.prototype), S.isPureReactComponent = !0;
   var Y = Array.isArray, i = { H: null, A: null, T: null, S: null, V: null }, q = Object.prototype.hasOwnProperty;
   function w(t, e, r, n, s, f) {
     return r = f.ref, {
@@ -123,7 +123,7 @@ function ot() {
     }
     throw t;
   }
-  function R(t, e, r, n, s) {
+  function y(t, e, r, n, s) {
     var f = typeof t;
     (f === "undefined" || f === "boolean") && (t = null);
     var u = !1;
@@ -142,7 +142,7 @@ function ot() {
               u = !0;
               break;
             case $:
-              return u = t._init, R(
+              return u = t._init, y(
                 u(t._payload),
                 e,
                 r,
@@ -152,7 +152,7 @@ function ot() {
           }
       }
     if (u)
-      return s = s(t), u = n === "" ? "." + P(t, 0) : n, Y(s) ? (r = "", u != null && (r = u.replace(I, "$&/") + "/"), R(s, e, r, "", function(et) {
+      return s = s(t), u = n === "" ? "." + P(t, 0) : n, Y(s) ? (r = "", u != null && (r = u.replace(I, "$&/") + "/"), y(s, e, r, "", function(et) {
         return et;
       })) : s != null && (A(s) && (s = Z(
         s,
@@ -165,7 +165,7 @@ function ot() {
     var _ = n === "" ? "." : n + ":";
     if (Y(t))
       for (var c = 0; c < t.length; c++)
-        n = t[c], f = _ + P(n, c), u += R(
+        n = t[c], f = _ + P(n, c), u += y(
           n,
           e,
           r,
@@ -174,7 +174,7 @@ function ot() {
         );
     else if (c = X(t), typeof c == "function")
       for (t = c.call(t), c = 0; !(n = t.next()).done; )
-        n = n.value, f = _ + P(n, c++), u += R(
+        n = n.value, f = _ + P(n, c++), u += y(
           n,
           e,
           r,
@@ -183,7 +183,7 @@ function ot() {
         );
     else if (f === "object") {
       if (typeof t.then == "function")
-        return R(
+        return y(
           V(t),
           e,
           r,
@@ -199,7 +199,7 @@ function ot() {
   function h(t, e, r) {
     if (t == null) return t;
     var n = [], s = 0;
-    return R(t, n, "", "", function(f) {
+    return y(t, n, "", "", function(f) {
       return e.call(r, f, s++);
     }), n;
   }
@@ -218,7 +218,7 @@ function ot() {
     if (t._status === 1) return t._result.default;
     throw t._result;
   }
-  var b = typeof reportError == "function" ? reportError : function(t) {
+  var z = typeof reportError == "function" ? reportError : function(t) {
     if (typeof window == "object" && typeof window.ErrorEvent == "function") {
       var e = new window.ErrorEvent("error", {
         bubbles: !0,
@@ -264,7 +264,7 @@ function ot() {
         );
       return t;
     }
-  }, o.Component = y, o.Fragment = C, o.Profiler = a, o.PureComponent = x, o.StrictMode = j, o.Suspense = W, o.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE = i, o.__COMPILER_RUNTIME = {
+  }, o.Component = v, o.Fragment = C, o.Profiler = a, o.PureComponent = x, o.StrictMode = j, o.Suspense = W, o.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE = i, o.__COMPILER_RUNTIME = {
     __proto__: null,
     c: function(t) {
       return i.H.useMemoCache(t);
@@ -278,7 +278,7 @@ function ot() {
       throw Error(
         "The argument must be a React element, but you passed " + t + "."
       );
-    var n = L({}, t.props), s = t.key, f = void 0;
+    var n = k({}, t.props), s = t.key, f = void 0;
     if (e != null)
       for (u in e.ref !== void 0 && (f = void 0), e.key !== void 0 && (s = "" + e.key), e)
         !q.call(e, u) || u === "key" || u === "__self" || u === "__source" || u === "ref" && e.ref === void 0 || (n[u] = e[u]);
@@ -292,7 +292,7 @@ function ot() {
     return w(t.type, s, void 0, void 0, f, n);
   }, o.createContext = function(t) {
     return t = {
-      $$typeof: d,
+      $$typeof: R,
       _currentValue: t,
       _currentValue2: t,
       _threadCount: 0,
@@ -321,7 +321,7 @@ function ot() {
   }, o.createRef = function() {
     return { current: null };
   }, o.forwardRef = function(t) {
-    return { $$typeof: m, render: t };
+    return { $$typeof: d, render: t };
   }, o.isValidElement = A, o.lazy = function(t) {
     return {
       $$typeof: $,
@@ -339,9 +339,9 @@ function ot() {
     i.T = r;
     try {
       var n = t(), s = i.S;
-      s !== null && s(r, n), typeof n == "object" && n !== null && typeof n.then == "function" && n.then(tt, b);
+      s !== null && s(r, n), typeof n == "object" && n !== null && typeof n.then == "function" && n.then(tt, z);
     } catch (f) {
-      b(f);
+      z(f);
     } finally {
       i.T = e;
     }
@@ -398,20 +398,17 @@ function ut() {
   return B || (B = 1, g.exports = ot()), g.exports;
 }
 function st({ children: p }) {
-  return p ? /* @__PURE__ */ v.jsx("div", { ref: (E) => {
+  return p ? /* @__PURE__ */ T.jsx("div", { ref: (E) => {
     E?.appendChild(p);
   } }) : null;
 }
 var G = ut();
 const it = (p) => new Promise((E) => setTimeout(E, p)), ft = G.lazy(() => it(3e3).then(() => Promise.resolve().then(() => pt)));
 function at({ block: p }) {
-  return /* @__PURE__ */ v.jsx(G.Suspense, { fallback: /* @__PURE__ */ v.jsx("p", { children: "Loading Lazy Component..." }), children: /* @__PURE__ */ v.jsx(ft, { block: p }) });
+  return /* @__PURE__ */ T.jsx(G.Suspense, { fallback: /* @__PURE__ */ T.jsx("p", { children: "Loading Lazy Component..." }), children: /* @__PURE__ */ T.jsx(ft, { block: p }) });
 }
 function ct({ block: p }) {
-  return /* @__PURE__ */ v.jsxs("div", { className: "bg-green-500 p-2", children: [
-    /* @__PURE__ */ v.jsx(st, { children: p }),
-    /* @__PURE__ */ v.jsx("p", { children: "background color is processed from tailwind" })
-  ] });
+  return p.classList.add("bg-green-500", "p-2"), p.children[0].replaceChildren("background color is processed from tailwind"), /* @__PURE__ */ T.jsx(st, { children: p });
 }
 const pt = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
@@ -421,6 +418,6 @@ export {
   st as B,
   ft as L,
   at as a,
-  v as j,
+  T as j,
   ut as r
 };
