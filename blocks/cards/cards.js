@@ -1,5 +1,5 @@
-import { createOptimizedPicture } from '../../dist/aem.js';
-import { moveInstrumentation } from '../../dist/scripts.js';
+import { createOptimizedPicture } from '../../scripts/aem.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   /* change to ul, li */

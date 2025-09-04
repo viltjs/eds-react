@@ -6,11 +6,11 @@
 
 import {
   decorateMain,
-} from '../../dist/scripts.js';
+} from '../../scripts/scripts.js';
 
 import {
   loadSections,
-} from '../../dist/aem.js';
+} from '../../scripts/aem.js';
 
 /**
  * Loads a fragment.

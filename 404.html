@@ -9,7 +9,7 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Page not found">
-  <script src="/dist/scripts.js" type="module"></script>
+  <script src="/scripts/scripts.js" type="module"></script>
   <script type="module">
     window.addEventListener('load', () => {
       if (document.referrer) {
@@ -27,7 +27,7 @@
     });
   </script>
   <script type="module">
-    import { sampleRUM } from '/dist/aem.js';
+    import { sampleRUM } from '/scripts/aem.js';
     sampleRUM('404', { source: document.referrer });
   </script>
   <link rel="stylesheet" href="/styles/styles.css">
